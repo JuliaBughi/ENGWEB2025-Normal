@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Eurovisão - Página Principal
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+  body
+    h1 Festival da Eurovisão
+
+    table(border="1")
+      thead
+        tr
+          th ID da Edição
+          th Ano
+          th País Organizador
+          th País Vencedor
+      tbody
+        each edicao in edicoes
+          tr
+            td 
+              a(href=`${edicao._id}`) #{edicao._id}
+            td #{edicao.anoEdição}
+            td 
+              a(href=`/paises/${edicao.organizacao}`) #{edicao.organizacao}
+            td 
+              if edicao.vencedor
+                a(href=`/paises/${edicao.vencedor}`) #{edicao.vencedor}
+              else
+                i (sem vencedor)
+

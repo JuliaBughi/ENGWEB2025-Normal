@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    title Eurovisão - País #{pais}
+    meta(charset="utf-8")
+  body
+    h1 País: #{pais}
+
+    h2 Participações
+    table(border="1")
+      thead
+        tr
+          th ID Edição
+          th Ano
+          th Música
+          th Intérprete
+          th Venceu?
+      tbody
+        each p in participacoes
+          tr
+            td 
+              a(href=`/${p.id}`) #{p.id}
+            td #{p.ano}
+            td #{p.título}
+            td #{p.intérprete}
+            td #{p.venceu ? 'Sim' : 'Não'}
+
+    h2 Edições Organizadas
+    table(border="1")
+      thead
+        tr
+          th ID Edição
+          th Ano
+      tbody
+        each e in organizado
+          tr
+            td 
+              a(href=`/${e._id || e.id}`) #{e._id || e.id}
+            td #{e.anoEdição || e.ano}
+
+    a(href="/") ⬅ Voltar à Página Principal
+
