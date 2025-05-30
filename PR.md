@@ -18,3 +18,14 @@ mongoimport -d eurovisao -c edicoes dataset_teste.json --jsonArray
 
 3. Comandos de execução das Apps
 
+npx express-generator --view=pug ex1
+cd ex1
+npm i
+npm i mongoose
+npm start
+
+npx express-generator --view=pug ex2
+cd ex2
+npm i
+npm i axios --save
+npm start
